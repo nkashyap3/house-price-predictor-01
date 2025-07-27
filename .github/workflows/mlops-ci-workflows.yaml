@@ -1,4 +1,4 @@
-˚name: MLOps CI
+name: MLOps CI
 on:
   push:
     branches:
