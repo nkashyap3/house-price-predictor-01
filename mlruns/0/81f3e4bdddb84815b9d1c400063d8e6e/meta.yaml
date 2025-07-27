@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/niteshkashyap/house-price-predictor/mlruns/0/81f3e4bdddb84815b9d1c400063d8e6e/artifacts
+end_time: 1753126782786
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 81f3e4bdddb84815b9d1c400063d8e6e
+run_name: final_training
+run_uuid: 81f3e4bdddb84815b9d1c400063d8e6e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753126777892
+status: 3
+tags: []
+user_id: niteshkashyap
