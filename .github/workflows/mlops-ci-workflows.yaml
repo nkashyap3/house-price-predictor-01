@@ -41,8 +41,8 @@ jobs:
 
       - name: MLFlow Server Setup
         run: | 
-          docker image pull ghcr.io/mlflow/mlflow:latest
-          docker run -d -p 5555:5000 -name mlops-server ghcr.io/mlflow/mlflow:latest \
+          docker pull ghcr.io/mlflow/mlflow:latest
+          docker run -d -p 5555:5000 --name mlops-server ghcr.io/mlflow/mlflow:latest \
           mlflow server --host 0.0.0.0 \
           --backend-store-uri sqlite:///mlflow.db \
           --default-artifact-root /tmp/mlrun           
@@ -52,11 +52,10 @@ jobs:
           python src/models/train_model.py \
           --config configs/model_config.yaml \
           --data data/processed/featured_house_data.csv \
-          --models-dir models   --mlflow-tracking-uri http://localhost:5555          
+          --models-dir models --mlflow-tracking-uri http://localhost:5555          
 
       - name: MLFlow Delete Server
         run: | 
           docker stop  mlops-server 
           docker rm mlops-server
           docker rmi ghcr.io/mlflow/mlflow:latest
-               
