@@ -41,7 +41,7 @@ jobs:
 
       - name: MLFlow
         run: | 
-          docker image pull mlflow/mlflow:latest
+          docker image pull ghcr.io/mlflow/mlflow:latest
           docker run -d -p 5555:5000 \
           mlflow server --host 0.0.0.0 \
           --backend-store-uri sqlite:///mlflow.db \
